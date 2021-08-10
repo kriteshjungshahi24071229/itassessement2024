@@ -1,2 +1,2 @@
 # Final-Project
-finalist private repo
+finalsite private repo

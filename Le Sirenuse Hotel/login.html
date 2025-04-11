@@ -1,47 +1,52 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Login</title>
   <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-    <div class="menu">
 
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="aboutus.html">About us</a></li>
-                <li><a href="login.html">Log in</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
+  <!-- Navigation -->
+  <nav>
+    <ul style="list-style-type: none; display: flex; gap: 20px; background-color: #333; padding: 10px;">
+      <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+      <li><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></li>
+      <li><a href="aboutus.html" style="color: white; text-decoration: none;">About Us</a></li>
+      <li><a href="login.html" style="color: white; text-decoration: none;">Log in</a></li>
+      <li><a href="register.html" style="color: white; text-decoration: none;">Register</a></li>
+      <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+    </ul>
+  </nav>
 
-    </div>
-  <div class="container">
+  <!-- Login Form -->
+  <div class="container" style="max-width: 400px; margin: 40px auto;">
     <h1>Login</h1>
     <p>Login from here</p>
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <form action="#" method="post">
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" id="email" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
-
-    <button type="submit" class="login">Login</button>
+      <button type="submit" class="login" style="margin-top: 15px;">Login</button>
+    </form>
   </div>
 
-  <div class="signup">
-    <p>Register from here? <a href="register.html">Create Account</a></p>
+  <div class="signup" style="text-align: center; margin-top: 20px;">
+    <p>Don’t have an account? <a href="register.html">Create Account</a></p>
   </div>
-  <footer>
-            <p align="center" fontsize="10">Le Serinuse Hotel</p>
-            <p align="center">Positano SA, Italy</p>
-            <p align="center">Lesirenusehotel@gmail.com</p>
-            <p align="center">Phone: +39 089 875066</p>
-        </footer>
+
+  <!-- Footer -->
+  <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+    <p>Le Sirenuse Hotel</p>
+    <p>Positano SA, Italy</p>
+    <p>Lesirenusehotel@gmail.com</p>
+    <p>Phone: +39 089 875066</p>
+  </footer>
 
 </body>
 </html>

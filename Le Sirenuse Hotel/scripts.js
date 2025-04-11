@@ -37,3 +37,11 @@ function validate(){
   alert("Form Submitted Successfully!");
   return true;
 }
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutus.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</nav>

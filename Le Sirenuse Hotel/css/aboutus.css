@@ -1,0 +1,93 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width:100%;
+	height:auto;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.about{
+	width:100%;
+	height: 600px;
+	background-image: url("../images/apr.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.text{
+	font-size: 30px;
+	color:#fff;
+	font-family: sans-serif;
+	text-shadow: 0px 15px 12px #000;
+}
+.line{
+	width:200px;
+	height: 8px;
+	background-color: white;
+	display: block;
+	position: relative;
+	border-radius: 5px;
+	left:10%;
+	box-shadow: 0px 15px 12px 0px #000;
+}
+.content{
+	width:100%;
+	height:auto;
+	background-color: brown;
+	font-size: 23px;
+	font-family: audiowide;
+	color: white;
+	line-height: 30px;
+	text-align: center;
+}
+.logo{
+	float: left;
+
+}
+.logo img{
+    width: 30%;
+    padding: 15px 0;
+}
+b{
+	font-size: 50px;
+	color:#000;
+	font-weight: 500px;
+}
+footer{
+	width:100%;
+	height: auto;
+	background-color: brown;
+	color: white;
+	font-size: 23px;
+	text-align: center;
+	line-height: 50px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}

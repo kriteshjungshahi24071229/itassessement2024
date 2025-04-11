@@ -3,6 +3,7 @@
 <head>
 	<title>Home Page</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>     
 <header>
@@ -11,32 +12,131 @@
             <img src="images/logo.png" alt="">
         </div>
         
-<ul class="nav-area">
-<li><a href="#">Home</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="aboutus.html">About us</a></li>
-<li><a href="login.html">Log in</a></li>
-<li><a href="register.html">Register</a></li>
-</ul>
-</div>
+        <ul class="nav-area">
+            <li><a href="#">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
 
 <div class="welcome-text">
-        <h1>
-
-        	You Are Welcomed
-		</h1>
-        <p style="text-align:top;"><a href="contact.html">Contact US</a></p>
-    </div>
+    <h1>You Are Welcome</h1>
+    <p><a href="contact.html">Contact US</a></p>
+</div>
 </header>
-<p> <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12112.1836016026!2d14.4875927!3d40.6288697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa86b9262929ea12!2sLe%20Sirenuse!5e0!3m2!1sen!2snp!4v1628563063760!5m2!1sen!2snp" width="1400" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+
+<div class="slider">
+    <div class="slide active">
+        <img src="images/a.jpg" alt="Hotel Exterior">
+        <div class="slide-content">
+            <h2>Luxury Redefined</h2>
+            <p>Experience the epitome of Italian luxury at Le Sirenuse Hotel</p>
+            <a href="gallery.html">View Gallery</a>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="images/d.jpg" alt="Luxury Room">
+        <div class="slide-content">
+            <h2>Elegant Accommodations</h2>
+            <p>Our rooms offer breathtaking views and unparalleled comfort</p>
+            <a href="aboutus.html">Learn More</a>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="images/s.jpg" alt="Swimming Pool">
+        <div class="slide-content">
+            <h2>Unforgettable Experiences</h2>
+            <p>Create lasting memories in our world-class facilities</p>
+            <a href="contact.html">Book Now</a>
+        </div>
+    </div>
+    
+    <div class="slider-controls">
+        <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    
+    <div class="slider-nav">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+    </div>
+</div>
+
+<div class="external-links">
+    <h2>Explore More</h2>
+    <a href="https://www.positano.com" target="_blank">Visit Positano</a>
+    <a href="https://www.italia.it/en" target="_blank">Discover Italy</a>
+    <a href="https://www.tripadvisor.com/Hotel_Review-g194862-d195202-Reviews-Le_Sirenuse-Positano_Amalfi_Coast_Campania.html" target="_blank">Read Reviews</a>
+</div>
+
+
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12112.1836016026!2d14.4875927!3d40.6288697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa86b9262929ea12!2sLe%20Sirenuse!5e0!3m2!1sen!2snp!4v1628563063760!5m2!1sen!2snp" width="1000" height="450" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
 <footer>
-            <p align="center" fontsize="10">Le Sirenuse Hotel</p>
-            <p align="center">Positano SA, Italy</p>
-            <p align="center">Lesirenusehotel@gmail.com</p>
-            <p align="center">Phone: +39 089 875066</p>
-        </footer>
+    <p>Le Sirenuse Hotel</p>
+    <p>Positano SA, Italy</p>
+    <p>Lesirenusehotel@gmail.com</p>
+    <p>Phone: ‪+39 089 875066‬</p>
+</footer>
 
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const buttons = document.querySelectorAll('.slider-nav button');
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
 
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        buttons.forEach(button => button.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        buttons[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Change slide every 5 seconds
+    let slideInterval = setInterval(nextSlide, 5000);
+
+    // Add click handlers for navigation buttons
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    });
+
+    // Add click handlers for prev/next buttons
+    prevButton.addEventListener('click', () => {
+        prevSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+
+    nextButton.addEventListener('click', () => {
+        nextSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+</script>
 
 </body>
 </html>
